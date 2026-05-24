@@ -14,7 +14,7 @@ const Collections = () => {
         <h1 className='text-gray-700 text-2xl md:text-3xl'>LATEST COLLECTIONS</h1>
         <p className='w-11 bg-gray-700 h-[2px]'></p>
       </div>
-      <p className='text-xl text-gray-600'>Effortless elegance designed for your everyday wardrobe.</p>
+      <p className=' text-base md:text-xl text-gray-600'>Effortless elegance designed for your everyday wardrobe.</p>
       <div className='grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-4 mt-5'>
         {latest.map((item,index)=>(
             <Product key={index} name={item.name} id={item._id} image={item.image} price={item.price}/>
