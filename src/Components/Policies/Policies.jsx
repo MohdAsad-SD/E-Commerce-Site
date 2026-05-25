@@ -22,10 +22,10 @@ const Policies = () => {
         </div>
       </div>
       <div className="mt-18">
-        <h2 className="font-bold text-2xl">Subscribe now & get 20% off</h2>
-        <p className="text-gray-500 text-lg">Subscribing to brand newsletters or loyalty programs often provides a one-time welcome coupon</p>
+        <h2 className="font-bold text-xl md:text-2xl">Subscribe now & get 20% off</h2>
+        <p className="text-gray-500 text-base md:text-lg">Subscribing to brand newsletters or loyalty programs often provides a one-time welcome coupon</p>
         <div className="mt-8 flex justify-center items-center">
-            <input className="p-3 w-auto md:w-sm border border-gray-500 outline-none" type="email" placeholder="Enter your email" />
+            <input className="p-3 w-full md:w-sm border border-gray-500 outline-none" type="email" placeholder="Enter your email" />
             <button className="p-3 bg-black text-white font-semibold border border-black cursor-pointer" type="submit">SUBSCRIBE</button>
         </div>
       </div>
