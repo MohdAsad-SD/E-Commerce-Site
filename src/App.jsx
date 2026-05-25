@@ -17,10 +17,10 @@ function App() {
   return (
     <>
       <Navbar search={search} setsearch={setsearch}/>
-      {search && <Search search={search} setsearch={setsearch}/>}
+      
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/allcollections' element={<AllCollections/>}/>
+        <Route path='/allcollections' element={<AllCollections search={search} setsearch={setsearch}/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
       </Routes>

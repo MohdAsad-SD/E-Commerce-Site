@@ -29,7 +29,7 @@ const Navbar = ({search,setsearch}) => {
             </ul>
         </div>
         <div className='flex gap-5 justify-center items-center'>
-            <img onClick={()=>setsearch(true)} className='w-5 cursor-pointer' src={assets.search_icon} alt="" />
+          <NavLink to={"/allcollections"}><img onClick={()=>setsearch(true)} className='w-5 cursor-pointer' src={assets.search_icon} alt="" /></NavLink>
             <img className='w-5 cursor-pointer' src={assets.profile_icon} alt="" />
             <div className='relative w-5 flex  items-center'>
                 <img className='w-5 cursor-pointer' src={assets.cart_icon} alt="" />
