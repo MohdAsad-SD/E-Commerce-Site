@@ -4,8 +4,8 @@ import { assets, products } from "../../assets/frontend_assets/assets";
 import Product from '../ProductID/Product'
 
 const AllCollections = ({ search, setsearch }) => {
-  const [gender,setgender]=useState([]);
   const [drop,setdrop]=useState(false);
+  const [gender,setgender]=useState([]);
   const [type,settype]=useState([]);
   const handletype=(value)=>{
     if(type.includes(value)){
@@ -47,8 +47,8 @@ const AllCollections = ({ search, setsearch }) => {
       {search && <Search search={search} setsearch={setsearch} />}
       <div className="flex flex-col md:flex-row justify-center items-start w-full gap-5">
         <div className=" flex flex-col gap-5 md:w-auto w-full">
-          <h2 className="text-xl flex gap-1 justify-start items-center">FILTERS <img onClick={()=>setdrop(!drop)} className={`w-3 ${drop ? "rotate-90":"rotate-270"} md:hidden transition-all duration-300  h-3`} src={assets.dropdown_icon} alt="" /></h2>
-          <div className={`flex flex-col justify-start items-start border border-gray-500 ${drop ? "flex":"hidden"} md:flex gap-3 pr-32 pl-2 py-5`}>
+          <h2 className="text-xl flex gap-2 justify-start items-center">FILTERS <img onClick={()=>setdrop(!drop)} className={`w-auto ${drop ? "rotate-90":"rotate-270"} md:hidden transition-all duration-300  h-3`} src={assets.dropdown_icon} alt="" /></h2>
+          <div className={` flex-col justify-start items-start border border-gray-500 ${drop ? "flex":"hidden"} md:flex gap-3 pr-32 pl-2 py-5`}>
             <p className="text-lg">CATEGORIES</p>
             <p className="flex justify-center items-center gap-1 text-gray-600">
               <input onChange={()=>handlegender("Men")} type="checkbox" name="gender" value="Men" />
