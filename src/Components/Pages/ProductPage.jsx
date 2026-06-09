@@ -26,12 +26,12 @@ const ProductPage = () => {
 
   return (
     <div className="flex flex-col justify-center items-center md:px-15 px-4 mt-5 gap-5 text-wrap overflow-hidden">
-      <div className="flex justify-center md:flex-row flex-col items-start w-[100%] overflow-hidden gap-3">
-        <div className=" flex flex-col gap-1 md:flex-col flex-row w-full  md:order-1 order-2  md:w-[10%]">
+      <div className="flex justify-center md:flex-row flex-col items-start w-full overflow-hidden gap-3">
+        <div className=" flex flex-col gap-1 md:flex-col flex-row w-full overflow-x-auto   md:order-1 order-2  md:w-[10%]">
           {data &&
             data.image.map((image, index) => (
               <img
-                className="w-[25%] w-full"
+                className="flex-1 md:flex-none md:w-full h-24 md:h-28 object-cover cursor-pointer"
                 onClick={() => setselected(image)}
                 key={index}
                 src={image}
