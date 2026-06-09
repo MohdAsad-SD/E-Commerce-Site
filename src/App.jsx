@@ -8,6 +8,8 @@ import About from './Components/Pages/About'
 import Contact from './Components/Pages/Contact'
 import AllCollections from './Components/Pages/AllCollections'
 import Login from './Components/Pages/Login'
+import Product from './Components/ProductID/Product'
+import ProductPage from './Components/Pages/ProductPage'
 
 
 
@@ -27,6 +29,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/login' element={<Login login={login} setlogin={setlogin}/>}/>
+        <Route path='/productpage/:productId' element={<ProductPage/>}/>
       </Routes>
       <Footer/>
     </>

@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import Search from "../Search/Search";
 import { assets, products } from "../../assets/frontend_assets/assets";
 import Product from '../ProductID/Product'
+import { Link } from "react-router-dom";
 
 const AllCollections = ({searchtext,setsearchtext,search, setsearch }) => {
   const [drop,setdrop]=useState(false);
@@ -67,6 +68,7 @@ let sortedproduct=[...filteredproducts];
               <input onChange={()=>handlegender("Men")} type="checkbox" name="gender" value="Men" />
               Men
             </p>
+            
             <p className="flex justify-center items-center gap-1 text-gray-600">
               <input onChange={()=>handlegender("Women")} type="checkbox" name="gender" value="Women" />
               Women
@@ -112,7 +114,10 @@ let sortedproduct=[...filteredproducts];
 
           <div className="mt-2 grid grid-cols-2 sm:grid-cols-3  md:grid-cols-3 lg:grid-cols-5 gap-4">
             { sortedproduct.map((item,index)=>(
-            <Product key={index} name={item.name} id={item._id} image={item.image} price={item.price}/>
+            <Link key={index} to={`/productpage/${item._id}`}>
+            <Product  name={item.name} id={item._id} image={item.image} price={item.price}/>
+            </Link>
+            
             ))}
           </div>
         </div>

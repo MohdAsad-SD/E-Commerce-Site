@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { products } from "../../assets/frontend_assets/assets";
 import Product from '../ProductID/Product'
+import { Link } from 'react-router-dom';
 
 const Collections = () => {
     const [latest,setlatest]=useState([]);
@@ -17,7 +18,9 @@ const Collections = () => {
       <p className=' text-base md:text-xl text-gray-600'>Effortless elegance designed for your everyday wardrobe.</p>
       <div className='grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-4 mt-5'>
         {latest.map((item,index)=>(
-            <Product key={index} name={item.name} id={item._id} image={item.image} price={item.price}/>
+          <Link className="flex" key={index} to={`/productpage/${item._id}`}>
+            <Product  name={item.name} id={item._id} image={item.image} price={item.price}/>
+          </Link>
         ))}
     
       </div>
