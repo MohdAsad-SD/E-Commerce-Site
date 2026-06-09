@@ -42,9 +42,9 @@ const ProductPage = () => {
         <div className="md:w-[40%] w-full md:order-2 order-1">
           <img className="w-full" src={ selected} alt="" />
         </div>
-        <div className="md:w-[55%] w-full mt-5 ml-3 flex flex-col gap-5 order-3  items-start">
+        <div className="md:w-[55%] w-full mt-5 ml-3 flex flex-col gap-5 order-3  items-start p-2">
           <h1 className="md:text-2xl text-xl font-semibold">{data && data.name}</h1>
-          <div className="flex justify-start items-center gap-2 w-full">
+          <div className="flex justify-start items-center gap-2 w-full ">
             <ul className="flex gap-2">
               <li>
                 <img className="w-3" src={assets.star_icon} alt="" />
@@ -65,7 +65,7 @@ const ProductPage = () => {
             <p>(122)</p>
           </div>
           <h2 className="md:text-2xl text-3xl font-semibold">{data && data.price}$</h2>
-          <p className="md:w-[70%] text-sm md:text-lg text-wrap w-full">{data && data.description}</p>
+          <p className="md:w-[70%]   w-full">{data && data.description}</p>
           <div className="mt-4">
             <p className="text-lg">Select Size</p>
             <div className="flex gap-5  ">
