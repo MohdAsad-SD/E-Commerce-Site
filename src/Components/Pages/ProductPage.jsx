@@ -25,13 +25,13 @@ const ProductPage = () => {
   }, [productId]);
 
   return (
-    <div className="flex flex-col justify-center items-center md:px-15 px-4 mt-5 gap-5">
+    <div className="flex flex-col justify-center items-center md:px-15 px-4 mt-5 gap-5 text-wrap overflow-hidden">
       <div className="flex justify-center md:flex-row flex-col items-start w-[100%] overflow-hidden gap-3">
-        <div className=" flex flex-col gap-1 md:flex-col flex-row bg-red-500 w-[25%] md:order-1 order-2  md:w-[5%]">
+        <div className=" flex flex-col gap-1 md:flex-col flex-row w-full  md:order-1 order-2  md:w-[10%]">
           {data &&
             data.image.map((image, index) => (
               <img
-                className="w-full"
+                className="w-[25%] w-full"
                 onClick={() => setselected(image)}
                 key={index}
                 src={image}
@@ -39,11 +39,11 @@ const ProductPage = () => {
               />
             ))}
         </div>
-        <div className="w[60%] md:order-2 order-1">
+        <div className="md:w-[40%] w-full md:order-2 order-1">
           <img className="w-full" src={ selected} alt="" />
         </div>
-        <div className="md:w-[40%] w-full mt-5 ml-3 flex flex-col gap-5 order-3  items-start">
-          <h1 className="text-2xl font-semibold">{data && data.name}</h1>
+        <div className="md:w-[55%] w-full mt-5 ml-3 flex flex-col gap-5 order-3  items-start">
+          <h1 className="md:text-2xl text-xl font-semibold">{data && data.name}</h1>
           <div className="flex justify-start items-center gap-2 w-full">
             <ul className="flex gap-2">
               <li>
@@ -85,7 +85,7 @@ const ProductPage = () => {
             ADD TO CART
           </button>
           <hr className="border-t border-gray-300 w-full" />
-          <div className="flex flex-col gap-2 text-gray-500">
+          <div className="flex flex-col gap-2 text-md text-gray-500">
             <p>100% Original product.</p>
             <p>Cash on delivery is available on this product.</p>
             <p>Easy return and exchange policy within 7 days.</p>
