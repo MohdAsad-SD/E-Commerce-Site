@@ -65,7 +65,7 @@ const ProductPage = () => {
             <p>(122)</p>
           </div>
           <h2 className="md:text-2xl text-3xl font-semibold">{data && data.price}$</h2>
-          <p className="md:w-[70%] w-full">{data && data.description}</p>
+          <p className="md:w-[70%] text-sm md:text-lg text-wrap w-full">{data && data.description}</p>
           <div className="mt-4">
             <p className="text-lg">Select Size</p>
             <div className="flex gap-5  ">
