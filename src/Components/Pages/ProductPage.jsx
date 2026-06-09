@@ -13,7 +13,7 @@ const ProductPage = () => {
     (r) =>
       r._id !== productId &&
       r.category === data?.category &&
-      r.subcategory === data?.subcategory,
+      r.subCategory === data?.subCategory,
   ).slice(0,5);
   useEffect(() => {
     window.scrollTo(0,0);
@@ -26,8 +26,8 @@ const ProductPage = () => {
 
   return (
     <div className="flex flex-col justify-center items-center md:px-15 px-4 mt-5 gap-5">
-      <div className="flex justify-center items-start w-[100%] gap-3">
-        <div className=" flex flex-col gap-1 w-[5%]">
+      <div className="flex justify-center md:flex-row flex-col items-start w-[100%] overflow-hidden gap-3">
+        <div className=" flex flex-col gap-1 md:flex-col flex-row bg-red-500 w-[25%] md:order-1 order-2  md:w-[5%]">
           {data &&
             data.image.map((image, index) => (
               <img
@@ -39,10 +39,10 @@ const ProductPage = () => {
               />
             ))}
         </div>
-        <div className="w[60%]">
+        <div className="w[60%] md:order-2 order-1">
           <img className="w-full" src={ selected} alt="" />
         </div>
-        <div className="w-[40%] mt-5 ml-3 flex flex-col gap-5  items-start">
+        <div className="md:w-[40%] w-full mt-5 ml-3 flex flex-col gap-5 order-3  items-start">
           <h1 className="text-2xl font-semibold">{data && data.name}</h1>
           <div className="flex justify-start items-center gap-2 w-full">
             <ul className="flex gap-2">
@@ -64,8 +64,8 @@ const ProductPage = () => {
             </ul>
             <p>(122)</p>
           </div>
-          <h2 className="text-2xl font-semibold">{data && data.price}$</h2>
-          <p className="w-[70%]">{data && data.description}</p>
+          <h2 className="md:text-2xl text-3xl font-semibold">{data && data.price}$</h2>
+          <p className="md:w-[70%] w-full">{data && data.description}</p>
           <div className="mt-4">
             <p className="text-lg">Select Size</p>
             <div className="flex gap-5  ">
@@ -81,7 +81,7 @@ const ProductPage = () => {
                 ))}
             </div>
           </div>
-          <button className="py-3 bg-black text-white w-1/3">
+          <button className="py-3 bg-black text-white w-1/2 md:w-1/3">
             ADD TO CART
           </button>
           <hr className="border-t border-gray-300 w-full" />
@@ -94,14 +94,14 @@ const ProductPage = () => {
       </div>
       <div className="w-full  p-2 ">
         <div className="flex w-1/4  ">
-          <div className="flex-1 items-center justify-center flex border border-gray-300 font-semibold p-2">
+          <div className="flex-1 items-center justify-center flex border border-gray-300 font-semibold md:p-2 p-3 ">
             Description
           </div>
-          <div className="flex-1 border items-center justify-center flex border-gray-300 text-gray-600 p-2">
+          <div className="flex-1 border text-nowrap items-center justify-center flex border-gray-300 text-gray-600 md:p-2 p-3 ">
             Reviews (122)
           </div>
         </div>
-        <div className="text-gray-500 border p-4 border-gray-300">
+        <div className="text-gray-500 border p-4 border-gray-300 w-full text-start md:text-none">
           <p>
             An e-commerce website is an online platform that facilitates the
             buying and selling of products or services over the internet. It
@@ -123,7 +123,7 @@ const ProductPage = () => {
           <h1 className="text-2xl font-semibold">PRODUCTS</h1>
           <p className="w-11 bg-gray-700 h-[2px]"></p>
         </div>
-        <div className="w-full flex gap-3 mt-5">
+        <div className="w-full grid gap-3 mt-5 grid-cols-2 md:grid-cols-5">
           {related.map((item, index) => (
             <Link className="flex" key={index} to={`/productpage/${item._id}`}>
               <Product
