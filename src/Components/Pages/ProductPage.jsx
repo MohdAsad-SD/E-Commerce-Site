@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { assets, products } from "../../assets/frontend_assets/assets";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../Redux/cartslice";
+import { addToCart } from "../../Redux/cartSlice";
 import Product from "../ProductID/Product";
 import { use } from "react";
 import { applyMiddleware } from "@reduxjs/toolkit";
