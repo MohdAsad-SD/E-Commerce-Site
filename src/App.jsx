@@ -10,6 +10,8 @@ import AllCollections from './Components/Pages/AllCollections'
 import Login from './Components/Pages/Login'
 import Product from './Components/ProductID/Product'
 import ProductPage from './Components/Pages/ProductPage'
+import PaymentPage from './Components/Pages/PaymentPage'
+import Cart from './Components/Pages/Cart'
 
 
 
@@ -30,6 +32,8 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/login' element={<Login login={login} setlogin={setlogin}/>}/>
         <Route path='/productpage/:productId' element={<ProductPage/>}/>
+        <Route path='/payment' element={<PaymentPage/>}/>
+        <Route path='cart' element={<Cart/>}/>
       </Routes>
       <Footer/>
     </>

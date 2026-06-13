@@ -3,6 +3,7 @@
 *{
   box-sizing: border-box;
   font-family: Outfit;
+  
  
 }
 body{
@@ -18,3 +19,4 @@ body{
 }::-webkit-scrollbar{
   display: none;
 }
+

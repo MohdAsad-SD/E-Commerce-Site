@@ -2,9 +2,28 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { assets, products } from "../../assets/frontend_assets/assets";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../Redux/cartSlice";
 import Product from "../ProductID/Product";
+import { use } from "react";
+import { applyMiddleware } from "@reduxjs/toolkit";
 
 const ProductPage = () => {
+  const handlecart=()=>{
+    if(!size){
+      alert("Please Select Size First");
+      return;
+    }
+    dispatch(addToCart({
+      productId: data._id,
+      name:data.name,
+      image:data.image[0],
+      size:size,
+      price:data.price,
+      quantity:1,
+    }))
+  }
+  const dispatch=useDispatch();
   const { productId } = useParams();
   const [data, setdata] = useState(false);
   const [selected, setselected] = useState("");
@@ -25,13 +44,13 @@ const ProductPage = () => {
   }, [productId]);
 
   return (
-    <div className="flex flex-col justify-center items-center md:px-15 px-4 mt-5 gap-5 text-wrap overflow-hidden">
+    <div className="flex  flex-col justify-center items-center md:px-15 px-4 mt-5 gap-5 text-wrap overflow-hidden">
       <div className="flex justify-center md:flex-row flex-col items-start w-full overflow-hidden gap-3">
-        <div className=" flex flex-col gap-1 md:flex-col flex-row w-full overflow-x-auto   md:order-1 order-2  md:w-[10%]">
+        <div className=" grid grid-cols-4 md:grid-cols-1 gap-2 w-full md:order-1 order-2 md:w-[10%]">
           {data &&
             data.image.map((image, index) => (
               <img
-                className="flex-1 md:flex-none md:w-full h-24 md:h-28 object-cover cursor-pointer"
+                className="w-full h-24 md:h-28 object-cover cursor-pointerr"
                 onClick={() => setselected(image)}
                 key={index}
                 src={image}
@@ -40,7 +59,8 @@ const ProductPage = () => {
             ))}
         </div>
         <div className="md:w-[40%] w-full md:order-2 order-1">
-          <img className="w-full" src={ selected} alt="" />
+          {selected && <img className="w-full" src={selected} alt="" />}
+          
         </div>
         <div className="md:w-[55%] w-full mt-5 ml-3 flex flex-col gap-5 order-3  items-start p-2">
           <h1 className="md:text-2xl text-xl font-semibold">{data && data.name}</h1>
@@ -81,7 +101,7 @@ const ProductPage = () => {
                 ))}
             </div>
           </div>
-          <button className="py-3 bg-black text-white w-1/2 md:w-1/3">
+          <button onClick={handlecart} className="py-3 bg-black text-white w-1/2 md:w-1/3">
             ADD TO CART
           </button>
           <hr className="border-t border-gray-300 w-full" />
