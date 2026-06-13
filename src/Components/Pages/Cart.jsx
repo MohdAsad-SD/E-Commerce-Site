@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { assets } from "../../assets/frontend_assets/assets";
-import { removeFromCart } from "../../Redux/cartSlice";
-import { updateQuantity } from "../../Redux/cartSlice";
+import { removeFromCart } from "../../Redux/cartslice";
+import { updateQuantity } from "../../Redux/cartslice";
 
 const Cart = () => {
   const dispatch = useDispatch();
