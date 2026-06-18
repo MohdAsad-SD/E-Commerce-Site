@@ -1,10 +1,16 @@
 import React from "react";
 import { assets } from "../../assets/frontend_assets/assets";
+import { useSelector } from "react-redux";
 
 const PaymentPage = () => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const subtotal = cartItems.reduce(
+    (total, items) => total + items.price * items.quantity,
+    0,
+  );
   return (
-    <div className="flex  justify-between items-center md:px-28 px-4 mt-5 gap-3">
-      <div className="flex flex-1  flex-col justify-start items-start   ">
+    <div className="flex  justify-between items-center md:px-28 px-4 mt-5 gap-3 md:flex-row flex-col">
+      <div className="flex flex-1  flex-col justify-start items-start    ">
         <div className="flex justify-center items-center gap-2">
           <h1 className="text-2xl text-gray-500 font-semibold">DELIVERY</h1>
           <h1 className="text-2xl text-gray-700 font-semibold">INFORMATION</h1>
@@ -78,7 +84,7 @@ const PaymentPage = () => {
             </div>
             <div className="flex justify-between  items-center">
               <p>Subtotal</p>
-              <p>${80}.00</p>
+              <p>${subtotal}.00</p>
             </div>
             <hr />
             <div className="flex justify-between items-center">
@@ -88,7 +94,7 @@ const PaymentPage = () => {
             <hr />
             <div className="flex justify-between items-center">
               <p className="font-semibold">Total</p>
-              <p className="font-semibold">${90}.00</p>
+              <p className="font-semibold">${subtotal + 10}.00</p>
             </div>
           </div>
         </div>
@@ -99,21 +105,21 @@ const PaymentPage = () => {
             <p className="w-11 bg-gray-700 h-[2px]"></p>
           </div>
           <div className="flex flex-col gap-5">
-            <div className="flex gap-3">
+            <div className="grid md:grid-cols-3  gap-3">
               <div className="flex gap-2 justify-center items-center cursor-pointer border border-gray-300 p-3">
                 <div className="rounded-[100%] border border-gray-300 p-2 w-1 h-1"></div>
-                <img className="w-12" src={assets.stripe_logo} alt="" />
+                <img className="md:w-15" src={assets.stripe_logo} alt="" />
               </div>
               <div className="flex gap-2 justify-center items-center cursor-pointer border border-gray-300 p-3">
                 <div className="rounded-[100%] border border-gray-300 p-2 w-1 h-1"></div>
-                <img className="w-22" src={assets.razorpay_logo} alt="" />
+                <img className="md:w-28" src={assets.razorpay_logo} alt="" />
               </div>
               <div className="flex gap-2 justify-center items-center cursor-pointer border border-gray-300 p-3">
                 <div className="rounded-[100%] border bg-green-500  border-green-500 shadow-lg shadow-green-500/80 animate-pulse p-2 w-1 h-1"></div>
-                <p className="text-gray-500">CASH ON DELIVERY</p>
+                <p className="text-gray-500 text-nowrap">CASH ON DELIVERY</p>
               </div>
             </div>
-            <button className="py-3 cursor-pointer px-12 bg-black self-end text-white font-semibold">
+            <button className="py-3 cursor-pointer px-12 bg-black self-end w-full md:w-auto text-white font-semibold">
               PLACE ORDER
             </button>
           </div>

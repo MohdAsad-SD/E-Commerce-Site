@@ -28,10 +28,10 @@ const Navbar = ({ login, setlogin, search, setsearch }) => {
         className={`bg-black md:bg-transparent w-64 top-0 transition-all duration-300 bg-white   fixed md:static ${open ? "right-0" : "-right-full"} md:w-auto md:h-auto h-screen p-12 md:p-1 z-50 `}
       >
         <ul className="flex gap-5  md:flex md:text-gray-700 text-black font-bold md:font-semi-bold flex-col md:flex-row">
-          <NavLink to={"/"}>HOME</NavLink>
-          <NavLink to={"/allcollections"}>COLLECTION</NavLink>
-          <NavLink to={"/about"}>ABOUT</NavLink>
-          <NavLink to={"/contact"}>Contact</NavLink>
+          <NavLink onClick={()=>setopen(false)} to={"/"}>HOME</NavLink>
+          <NavLink onClick={()=>setopen(false)} to={"/allcollections"}>COLLECTION</NavLink>
+          <NavLink onClick={()=>setopen(false)} to={"/about"}>ABOUT</NavLink>
+          <NavLink onClick={()=>setopen(false)} to={"/contact"}>Contact</NavLink>
         </ul>
       </div>
       <div className="flex gap-5 justify-center items-center">
