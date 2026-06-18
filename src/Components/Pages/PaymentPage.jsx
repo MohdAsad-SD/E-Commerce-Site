@@ -10,7 +10,7 @@ const PaymentPage = () => {
   );
   return (
     <div className="flex  justify-between items-center md:px-28 px-4 mt-5 gap-3 md:flex-row flex-col">
-      <div className="flex flex-1  flex-col justify-start items-start    ">
+      <div className="flex flex-1  flex-col justify-start items-start w-full p-1">
         <div className="flex justify-center items-center gap-2">
           <h1 className="text-2xl text-gray-500 font-semibold">DELIVERY</h1>
           <h1 className="text-2xl text-gray-700 font-semibold">INFORMATION</h1>
@@ -74,7 +74,7 @@ const PaymentPage = () => {
           </div>
         </div>
       </div>
-      <div className="flex-1 ">
+      <div className="flex-1  ">
         <div className="flex justify-center items-center gap-2">
           <div className="w-full p-3 flex flex-col gap-2 ">
             <div className="flex gap-1 justify-center items-center">
@@ -98,25 +98,25 @@ const PaymentPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center gap-2">
+        <div className="flex flex-col justify-center items-center gap-2  w-full">
           <div className="w-full p-3 flex justify-center items-center gap-1 ">
             <h1 className="text-2xl text-gray-500 font-semibold">PAYMENT</h1>
             <h1 className="text-2xl text-gray-700 font-semibold">METHOD</h1>
             <p className="w-11 bg-gray-700 h-[2px]"></p>
           </div>
-          <div className="flex flex-col gap-5">
-            <div className="grid md:grid-cols-3  gap-3">
+          <div className="flex flex-col gap-5 w-full ">
+            <div className="grid md:grid-cols-3    gap-3">
               <div className="flex gap-2 justify-center items-center cursor-pointer border border-gray-300 p-3">
                 <div className="rounded-[100%] border border-gray-300 p-2 w-1 h-1"></div>
-                <img className="md:w-15" src={assets.stripe_logo} alt="" />
+                <img className="h-5 sm:h-6 w-auto object-contain min-w-0" src={assets.stripe_logo} alt="" />
               </div>
               <div className="flex gap-2 justify-center items-center cursor-pointer border border-gray-300 p-3">
                 <div className="rounded-[100%] border border-gray-300 p-2 w-1 h-1"></div>
-                <img className="md:w-28" src={assets.razorpay_logo} alt="" />
+                <img className="h-5 sm:h-6 w-auto object-contain min-w-0 " src={assets.razorpay_logo} alt="" />
               </div>
-              <div className="flex gap-2 justify-center items-center cursor-pointer border border-gray-300 p-3">
+              <div className="flex gap-2 justify-center items-center cursor-pointer border w-full border-gray-300 p-3">
                 <div className="rounded-[100%] border bg-green-500  border-green-500 shadow-lg shadow-green-500/80 animate-pulse p-2 w-1 h-1"></div>
-                <p className="text-gray-500 text-nowrap">CASH ON DELIVERY</p>
+                <p className="text-gray-500 text-base  w-auto">CASH ON DELIVERY</p>
               </div>
             </div>
             <button className="py-3 cursor-pointer px-12 bg-black self-end w-full md:w-auto text-white font-semibold">
