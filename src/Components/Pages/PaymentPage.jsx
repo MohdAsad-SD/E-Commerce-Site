@@ -1,13 +1,27 @@
 import React from "react";
 import { assets } from "../../assets/frontend_assets/assets";
 import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
-const PaymentPage = () => {
+
+const PaymentPage = ({login}) => {
+  const navigate=useNavigate();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const subtotal = cartItems.reduce(
     (total, items) => total + items.price * items.quantity,
     0,
   );
+  const handlepurchase=()=>{
+    if(cartItems.length===0){
+      alert("Your Cart Is Empty");
+      return;
+    }
+     if(!login){
+      alert("Login Please");
+      return;
+    }
+    navigate('/myorders');
+  };
   return (
     <div className="flex  justify-between items-center md:px-28 px-4 mt-5 gap-3 md:flex-row flex-col">
       <div className="flex flex-1  flex-col justify-start items-start w-full p-1">
@@ -21,55 +35,55 @@ const PaymentPage = () => {
             <input
               className="w-1/2 p-2 rounded border border-gray-300"
               type="text"
-              value="MOHD"
+              defaultValue="MOHD"
             />
             <input
               className="w-1/2 p-2 rounded border border-gray-300"
               type="text"
-              value="ASAD"
+              defaultValue="ASAD"
             />
           </div>
           <div className="w-full flex flex-col gap-2">
             <input
               type="text"
               className="w-full p-2 rounded border border-gray-300"
-              value="asadnafees2005@gmail.com"
+              defaultValue="asadnafees2005@gmail.com"
             />
             <input
               type="text"
               className="w-full p-2 rounded border border-gray-300"
-              value="Street"
+              defaultValue="Street"
             />
           </div>
           <div className="flex gap-2">
             <input
               className="w-1/2 p-2 rounded border border-gray-300"
               type="text"
-              value="SRE"
+              defaultValue="SRE"
             />
             <input
               className="w-1/2 p-2 rounded border border-gray-300"
               type="text"
-              value="NEW"
+              defaultValue="NEW"
             />
           </div>
           <div className="flex gap-2">
             <input
               className="w-1/2 p-2 rounded border border-gray-300"
               type="text"
-              value="247001"
+              defaultValue="247001"
             />
             <input
               className="w-1/2 p-2 rounded border border-gray-300"
               type="text"
-              value="INDIA"
+              defaultValue="INDIA"
             />
           </div>
           <div className="w-full flex flex-col gap-2">
             <input
               type="number"
               className="w-full p-2 rounded border border-gray-300"
-              value="7505325040"
+              defaultValue="7505325040"
             />
           </div>
         </div>
@@ -116,12 +130,14 @@ const PaymentPage = () => {
               </div>
               <div className="flex gap-2 justify-center items-center cursor-pointer border w-full border-gray-300 p-3">
                 <div className="rounded-[100%] border bg-green-500  border-green-500 shadow-lg shadow-green-500/80 animate-pulse p-2 w-1 h-1"></div>
-                <p className="text-gray-500 text-base  w-auto">CASH ON DELIVERY</p>
+                <p className="text-gray-500 text-base md:text-nowrap  w-auto">CASH ON DELIVERY</p>
               </div>
             </div>
-            <button className="py-3 cursor-pointer px-12 bg-black self-end w-full md:w-auto text-white font-semibold">
+            
+            <button onClick={()=>handlepurchase()} className="py-3 cursor-pointer px-12  bg-black self-end w-full md:w-auto text-white font-semibold">
               PLACE ORDER
             </button>
+            
           </div>
         </div>
       </div>

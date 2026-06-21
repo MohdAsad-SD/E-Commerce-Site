@@ -11,7 +11,7 @@ const Contact = () => {
       </div>
       <div>
         <div className="w-full flex mt-8 gap-8 justify-center items-start  md:items-center md:flex-row flex-col ">
-          <img className="md:w-md w-full" src={assets.contact_img} alt="" />
+          <img className="md:w-md w-full" src={assets.contact_img} loading='lazy' alt="" />
           <div className="flex flex-col gap-8 justify-center items-center md:justify-start md:items-start w-full md:text-left text-center md:w-auto">
             <h3 className="text-xl text-gray-600 font-semibold">Our Store</h3>
             <div>

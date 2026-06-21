@@ -11,7 +11,7 @@ const About = () => {
         </div>
       <div>
         <div className='flex md:flex-row flex-col  mt-12 gap-5 justify-center items-start '>
-            <img className='md:w-md w-full' src={assets.about_img} alt="" />
+            <img className='md:w-md w-full' loading='lazy' src={assets.about_img} alt="" />
             <div className='flex flex-col justify-center items-start  gap-12 md:w-1/2 w-full ' >
                 <p className='text-gray-500'>Forever was born out of a passion for innovation and a desire to revolutionize the way people shop online. Our journey began with a simple idea: to provide a platform where customers can easily discover, explore, and purchase a wide range of products from the comfort of their homes.</p>
                 <p className='text-gray-500'>Since our inception, we've worked tirelessly to curate a diverse selection of high-quality products that cater to every taste and preference. From fashion and beauty to electronics and home essentials, we offer an extensive collection sourced from trusted brands and suppliers.</p>
