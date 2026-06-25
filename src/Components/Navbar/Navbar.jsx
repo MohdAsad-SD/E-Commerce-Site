@@ -22,7 +22,9 @@ const Navbar = ({ login, setlogin, search, setsearch }) => {
   return (
     <div className=" flex justify-between items-center px-4 py-5 md:px-15 md:py-3">
       <div>
+        <Link to={'/'}>
         <img className=" w-36 md:w-42" src={assets.logo} alt="" />
+        </Link>
       </div>
       <div
         className={`bg-black md:bg-transparent w-64 top-0 transition-all duration-300 bg-white   fixed md:static ${open ? "right-0" : "-right-full"} md:w-auto md:h-auto h-screen p-12 md:p-1 z-50 `}

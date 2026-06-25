@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Search from "../Search/Search";
 import { assets, products } from "../../assets/frontend_assets/assets";
 import Product from '../ProductID/Product'
@@ -94,7 +94,7 @@ let sortedproduct=[...filteredproducts];
             </p>
           </div>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 ">
           <div className="flex justify-between sm:justify-between md:justify-between items-center md:items-start gap-3">
             <div className="flex justify-center items-center gap-1">
               <h1 className="text-base sm:text-lg md:text-2xl text-gray-500 font-semibold">ALL</h1>
@@ -112,7 +112,7 @@ let sortedproduct=[...filteredproducts];
             </select>
           </div>
 
-          <div className="mt-2 grid grid-cols-2 sm:grid-cols-3  md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="mt-2 grid grid-cols-2 sm:grid-cols-3  md:grid-cols-3 lg:grid-cols-5 gap-4 ">
             { sortedproduct.map((item,index)=>(
             <Link key={index} to={`/productpage/${item._id}`}>
             <Product  name={item.name} id={item._id} image={item.image} price={item.price}/>

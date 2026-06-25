@@ -27,7 +27,7 @@ function App() {
         search={search}
         setsearch={setsearch}
       />
-      <Suspense fallback={<h2>Loading...</h2>}>
+      <Suspense fallback={<h2 className="text-center font-bold text-3xl">Loading...</h2>}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
